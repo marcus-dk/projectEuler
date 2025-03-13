@@ -25,12 +25,16 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
 
 """
 
-def fibonacci_of(n):
-     if n in {0, 1}:  # Base case
-         return n
-     return fibonacci_of(n-1) + fibonacci_of(n-2)
+def fib(digits):
+	n2=1
+	n1=1
+	i=2
+	while len(str(n1))<digits:
+		i+=1
+		temp=n1
+		n1+=n2
+		n2=temp
+	return i
 
 if __name__ == "__main__":
-    x = fibonacci_of(100)
-
-    print(f"The first fibonacci number with a 1000 digits is {x} with an index of")
+    print(fib(1000))
